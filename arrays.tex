@@ -1,0 +1,80 @@
+\chapter{Einfache Loops und numerische Arrays}
+
+Die quantitative Lösung vieler Probleme verlangt von uns, eine Liste von Zahlen abzuarbeiten, so z.B. das Abschätzen eines Integrals durch eine Riemannsumme, das Mitteln von Messwerten mit statistischen Schwankungen und die Berechnung von Skalarprodukten.
+%
+In herkömmlichen Programmiersprachen passiert dies durch das Abarbeiten einer Schleife bzw. eines Loops.
+%
+Python hat jedoch eine eingebaute Funktionalität, die uns viele der eben genannten Dinge abnehmen kann. 
+%
+
+Hier wollen wir beide Vorgehensweisen vermittel und zwar an einem 
+einfachen Beispiel.
+%
+Die Aufgabe lautet, siehe auch Buch Kap. 5.2 Jupyter Notebook. % S.  189
+
+\begin{center}
+\fbox{Wie groß ist $S = \sum_{n=1}^{N} n^2$ für $N=12$?}
+\end{center}
+
+Der klassische Ansatz wäre, eine Formel für das gegebene mathematische Problem zu finden oder selbst herzuleiten.
+%
+Das Ergebis lautet: $S = N(N+1)(2N+1)/6$. 
+%
+Es ist im Listing~\ref{lst:SOSs1} implementiert. 
+
+
+\lstinputlisting[language=Python, label=lst:SOSs1, caption=Sehr traditionelle Lösung der oben gestellten Aufgabe.]{ArraysCode/code1.py}
+
+\section{\texttt{for} und \texttt{while} Loops}
+
+Die gerade gezeigte Lösung funktioniert nicht mehr, wenn z.B. eine nicht-ganzzahlige Potenz der ganzen Zahlen aufsummiert werden sollte.
+%
+In diesem Fall muss zum \textit{brute-force-computing} übergangen werden.
+%
+In einer low-level Programmiersprache ginge das wie in Listing~\ref{lst:SOSs2} gezeigt. 
+
+\lstinputlisting[language=Python, label=lst:SOSs2, caption=Traditionelle Lösung der gestellten Aufgabe mit der Variablen \texttt{summe}.]{ArraysCode/code2.py}
+
+\texttt{for} loops sind eng mit dem Kommando \texttt{range} verbunden.
+%
+Die \texttt{range} Funktion erzeugt Zahlen von \texttt{1} bis \texttt{N}, die dann der Lauf-Variablen \texttt{n} zugeordnet werden. 
+%
+Der Aufruf von \texttt{range(N)} erzeugt \texttt{N} Zahlen,  die allerdings bei \texttt{0} anfangen und somit als höchste Ausgabe \texttt{N-1} haben. 
+
+Oft werden Loops so lange durchlaufen, bis eine gewisse Abbruchbedingung erfüllt wird. 
+%
+Dazu sind \texttt{while} Schleifen gut, mit denen man natürlich auch eine \texttt{for} Schleife realisiert werden kann.
+
+
+\lstinputlisting[language=Python, label=lst:SOSs3, caption=Demonstration einer \texttt{while} Schleife.]{ArraysCode/code4.py}
+
+Im Listing~\ref{lst:SOSs3} wurde auch ein neuer Variablen- bzw. Datentyp eingeführt, nämlich die boolesche Variable, die die Werte \texttt{True} oder \texttt{False} annehmen kann. 
+%
+Man beachte auch den Unterschied zwischen \texttt{=} (Zuordnung) und \texttt{==} (Vergleich), die immer mal wieder vergessen wird. 
+%
+
+
+
+\section{Numerische Arrays}
+
+Python kann sehr gut mit Listen bzw. Arrays oder Vektoren arbeiten.
+%
+Wir werden uns zunächst um rein numerische Arrays kümmern.
+%
+Ein Array kann z.B. einen Vektor in drei Dimensionen darstellen.
+%
+Es kann aber auch eine Messreihe als Funktion der Zeit enthalten, in der die erste Spalte die Zeit und die zweite die Geschwindigkeit darstellt und wir daraus die zurückgelegte Strecke oder die Beschleunigung bestimmen wollen. 
+%
+
+Python bietet viele Möglichkeiten solche Vektoren zu bearbeiten.
+%
+Hier werden einige dargestellt, auch mit dem Ziel, Ihnen zu vermitteln, wie die Daten mit low-level Programmiersprachen bearbeitet würden.
+
+\section{Lösen einfacher Gleichungssysteme}
+
+Mathematische Aufgabenstellung, finde $c_1$ und $c_2$ in der Gleichung:
+$$ \left( x , y\right) = c_1 \left(\cos\varphi, \sin\varphi\right) + c_2 \left(-\sin\varphi, \cos\varphi\right) $$
+
+Diese Aufgabe hat eine symbolische Lösung für nicht-spezifizierte Werte von $\varphi$, aber auch numerische Lösungen, wenn für $\varphi$ eine konkrete Zahl angegeben ist. 
+
+% \section{Erstellen von Arrays}

@@ -1,0 +1,85 @@
+\chapter{Elementare Datenverarbeitung}
+
+\section{Integrieren}
+
+Es liegen Daten einer Funktion $f(x)$ an diskreten Stütztstellen im Format $x_n, f_n$ vor und es soll das Integral $I=\int_{x_0}^{x_N}f(x)\mathrm{d}x$ näherungsweise bestimmt werden oder aber die Stammfunktion $F(x)$ an den vorliegenden Stützstellen.
+%
+Die Integrationskonstante wird zunächst so festgelegt, dass $F(x_n) = 0$. 
+%
+Zur Lösung der Aufgabe bietet sich oft die Trapezregel an, siehe auch englisches Wiki, mit der das Integral zwischen $x_{n}$ und $x_{n+1}$ wiefolgt abgeschätzt wird:
+\begin{eqnarray}
+\int_{x_n}^{x_{n+1}} f(x) dx & = & (x_{n+1}-x_{n}) \langle f \rangle_n  \nonumber\\
+& \approx & \Delta x_n \frac{f(x_{n})+f(x_{n+1})}{2},
+\end{eqnarray}
+Hierbei ist $\Delta x_n = x_{n+1}-x_n$ und
+ $\langle f \rangle_n$ ist, gemäß dem Mittelwertsatz der Integralrechnung, der Mittelwert der Funktion $f(x)$ auf dem Intervall $[x_n,x_{n+1}]$. 
+%
+
+\textbf{Detailinformation:} 
+Der führende  Fehler der Integration in diesem Schema ist in der Regel $f''(x_n) \Delta x_n^3$.
+%
+Über das Integrationsgebiet akkumuliert er sich zu: (mittlere Krümmung mal $N$) mal $\Delta x^3$, was letztendlich proportional zu $1/N^2$ bzw. $\Delta x^2$ ist. 
+%
+Man sagt auch der (erwartete) Fehler hat die Ordnung $1/N^2$ oder einfach $\mathcal{O}(1/N^2)$. 
+%
+Eine Verdoppelung der Anzahl der Stützstellen bewirkt eine Vervierfachung der Genauigkeit. 
+
+
+In manchen Fällen divergiert eine Funktion, wie z.B. $f(x)=1/\sqrt{x}$ bei $x_0 = 0$. 
+%
+Aus Python-Sicht müsste dann ein exception handling definiert werden, auf das wir u.U. später zurückkommen.
+%
+Liegt die Funktion jedoch analytisch vor, hilft oft eine Näherung der Form
+\begin{eqnarray}
+\langle f \rangle_n & \approx & f(x_{n+1/2}) \textrm{ mit } x_{n+1/2} = (x_n+x_{n+1})/2\\
+\Rightarrow \int_{x_0}^{x_N} f(x) \mathrm{d}x & \approx & \Delta x \sum_{n=0}^{N-1} f(x_{n+1/2})
+\label{eq:midpointRuleIntegration} % nicht korrekter Name!!!
+\end{eqnarray}
+weiter, wobei hier fairerweise gesagt werden muss, dass in solchen Fällen die Verwendung einer konstanten Schrittweite $\Delta x$ nicht unbedingt optimal ist.
+%
+Dabei sollte aber, was oft  verschwiegen wird, nicht nur der Zeitaufwand des Computers sondern auch der des Programmierers berücksichtigt werden, sodass die in Gl.~\eqref{eq:midpointRuleIntegration} beschriebene Näherung eben doch optimal sein kann. 
+
+Als Beispiel nehmen wir die Funktion $f(x) = \sqrt{x}\sin(x)$ auf dem Intervall $[0,4\pi]$ unter Verwendung von zunächst $N = 40$ Stützstellen. Dies entspricht einem $\Delta x$ von $\pi/10$, also quasi $18^\circ$, was einiges größer ist als der Bereich  von $\vert \varphi \vert < 5^\circ$, in dem die Kleinwinkelnäherung von $\sin\varphi \approx \varphi$ gerne als gültig angegeben wird. 
+%
+
+
+\lstinputlisting[language=Python, label=lst:trapezoid, caption=Traditionelle Integration gemäß der Trapezregel]{ElementarCode/code1.py}
+% \begin{lstlisting}[language=Python, label=lst:trapezoid, caption=Traditionelle Integration gemäß der Trapezregel]
+% import numpy as np
+% 
+% xMin = 0
+% xMax = 4*np.pi
+% N = 40
+% 
+% def myFunction(x):
+%   return np.sqrt(x)*np.sin(x)  # keine Klammern im return statement
+% 
+% dx = (xMax-xMin)/N
+% x = np.linspace(xMin,xMax,N+1)
+% f = []
+% F = [] # Gross- und Kleinschreibung wird unterschieden
+% 
+% f.append(myFunction(xMin))
+% F.append(0)
+% print(x[0], f[0], F[0])
+% 
+% for i in range(N):
+%   j = i+1
+%   f.append(myFunction(x[j]))
+%   dF = dx*(f[i]+f[j])/2
+%   F.append(F[i]+dF)
+%   print(x[j], f[j], F[j])
+% \end{lstlisting}
+
+Als nächstes: numerische Stammfunktion mit numpy Paket.
+
+Es ist Zeit zu gestehen, dass wir im ``echten Leben'' dieses konkrete  Beispiel, in dem die $x_n,f_n$ nicht als Messwerte vorliegen sondern als einfache Funktion, mit Hilfe von \texttt{wolframalpha} (wa) wiefolgt lösen würden:\vspace*{2mm}\\
+\texttt{wa> N[integrate sqrt(x)*sin(x) from x = 0 to 4*pi,10]} \vspace*{2mm}\\
+Hierbei gibt die Zahl \texttt{10} die Anzahl der gültigen \texttt{N}achkommastellen an. 
+
+Erste Verwendung von \texttt{sympy}
+
+
+\section{Differenzieren}
+
+\section{Statistische Datenanalyse}

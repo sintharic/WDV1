@@ -1,0 +1,116 @@
+\chapter{Erste Schritte}
+
+\section{Warum Python?}
+
+Man kann mit Gewissheit sagen, dass praktische Erfahrung mit Python eine der n\"utzlichsten Zusatzkompetenzen ist, die man sich in Ihrem Fachbereich \"uberhaupt aneignen kann.
+
+Python hat vor einigen Jahren Java/JavaScript \"uberholt und ist mittlerweile mit deutlichem Abstand die \href{https://pypl.github.io/PYPL.html}{popul\"arste `general purpose' Programmiersprache der Welt}.
+Im Bereich der wissenschaftlichen Datenverarbeitung ist der Abstand noch um ein vielfaches gr\"oßer, was an der Verf\"ugbarkeit von unz\"ahligen Zusatzpaketen liegt, die auf diesen Anwendungsbereich spezialisiert sind (w\"ahrend Java haupts\"achlich f\"ur Android und Websites verwendet wird).
+
+Eine kurze Zusammenfassung der Eigenschaften:
+
+\begin{itemize}
+\item Höhere Programmiersprache zur Verarbeitung von Daten inkl. Text (``strings'') und zum Erstellen wissenschaftlicher Abbildungen (``plots'')
+\item
+Python ist ein Interpreter. Geht also Zeile für Zeile durch den Code. Ist deshalb meist, wie Matlab auch, sehr viel langsamer als maschinennähere Programmiersprachen, wie z.B. C oder C++.
+\item
+Sehr umfangreiche Funktionalität, viele Bibliotheken, dazu schnell wachsende Community
+\item
+Relativ einfache Syntax, ähnlich wie Matlab
+\item
+Kostenlos f\"ur jeden verfügbar (im Gegensatz zu Matlab)
+\end{itemize}
+
+
+
+\section{Installation von Scientific Python}
+
+F\"ur diesen Kurs ben\"otigen Sie eine Scientific Python3-Umgebung. 
+Das bedeutet, dass neben der Basissprache Python3 eine Reihe an zus\"atzlichen Paketen (Modulen) installiert sein muss.
+Um sicher zu gehen, dass Die die richtigen Pakete installieren, wird empfohlen einfach die weltweit meistgenutzte Distribution \href{https://www.anaconda.com/products/individual}{Anaconda} zu installieren.
+
+\textcolor{red}{Achtung: W\"ahlen Sie in jedem Fall Python3 und nicht Python2! Leider sind die beiden Versionen grunds\"atzlich verschieden und nicht miteinander kompatibel.}
+
+Anaconda kommt mit dem IDE (Integrated Development Environment) Spyder, welches einen guten Code-Editor, eine IPython-Console und vieles mehr enth\"alt. 
+Im Grunde brauchen Sie zum Programmieren in Python nichts anderes als dieses Programm.
+Auf MacOS funktioniert Spyder allerdings nicht besonders gut, weshalb hier die Nutzung eines separaten Editors zusammen mit IPython im Terminal zu empfehlen ist. 
+Der kostenlose Allround-Editor \href{https://www.sublimetext.com/download}{Sublime Text} ist uneingeschr\"ankt zu empfehlen f\"ur alle Programmiersprachen.
+Weitere popul\"are Alternativen sind \href{https://www.jetbrains.com/de-de/pycharm/download/}{PyCharm} und \href{https://jupyter.org}{JuPyter}. 
+Letzteres wird zwar automatisch mit Anaconda installiert, bringt aber leider fast keine der quality-of-life-features mit, die man von den anderen Editoren kennt. 
+Den Fortgeschrittenen und Unix-Puristen sei es auch erlaubt VIM zu verwenden.
+
+
+
+\section{Literaturempfehlungen}
+
+\begin{enumerate}
+
+\item \textbf{BUCH: Learning scientific programming with Python, 2nd edition} \\
+Diese Veranstaltung orientiert sich teilweise an diesem Buch von Chrisitan Hill. 
+Der gr\"oßte Unterschied ist, dass hier auf einige Formalien verzichtet wird zu Gunsten von Praxis.
+
+\item \textbf{TUTORIAL: Aus der offiziellen Dokumentation von Python3} \\
+Dieses \href{https://docs.python.org/3/tutorial/}{Tutorial} ist zwar nicht speziell auf wissenschaftliche Anwendungen ausgelegt, aber dennoch ein n\"utzliches Nachschlagewerk f\"ur Funktionen der Basissprache Python3.
+
+\item \textbf{inventwithpython} \\
+Es gibt eine Vielzahl von kostenlosen Tutorials online, sowohl in Form von Videos als auch in Textform.
+Besonders zu erw\"ahnen ist jedoch \url{https://inventwithpython.com}.
+
+\item \textbf{Google, StackOverflow} \\
+Ein Vorteil, der mit der Popularit\"at von Python einhergeht, ist die Tatsache, dass so ziemlich jede nur vorstellbare Frage bereits im Internet gestellt und beantwortet wurde.
+Sollten Sie also bei der Bearbeitung der Aufgaben auf Probleme stoßen, bei denen dieses Skript nicht weiterhilft, k\"onnen Sie jederzeit versuchen Ihr Problem zu googeln.
+Dabei ist es immer empfehlenswert auf englisch zu suchen, da es einfach viel mehr Ergebnisse liefert und vor allem das Forum \href{https://stackoverflow.com}{StackOverflow}.
+\end{enumerate}
+
+Literaturangaben im Folgenden, die  Tutorium und Buch nicht weiter spezifizieren, beziehen sich auf die hier genannten. 
+%
+Da sich die Nummerierung der Kapitel u.U. mit der Zeit ändern können, wird auch immer der Kapitelname genannt. 
+
+
+
+\section{Jupyter Notebook}
+
+Browser basierte, interaktive Entwicklungsumgebung, mit der Dokumente erstellt werden können, die sich wiederum zur Abgabe von Hausaufgaben verwenden lassen.
+
+\lstinputlisting[language=Python, label=lst:groesserAlsDu, caption=Ein kleines Python Programm statt ``hello world''.]{SchritteCode/code1.py}
+
+\noindent
+\textbf{In Vorlesung gezeigt:}
+\begin{itemize}
+\item Verwendung von Kommandozeilen und Markup.
+\item Einfügen von Abbildungen und Links in den Markup. 
+\item Wie speichert man  ein Jupyter Notebook und versendet es in Teams?
+\item[(--)] Wie werden PDFs erzeugt?
+\section{Grundrechenarten und mehr}
+\end{itemize}
+
+Einfache Arithmetik erfolgt gemäß, siehe auch Tutorium 3.1.1, \textit{Using Python as a Calculator}:
+\lstinputlisting[language=Python, caption=Grundrechenarten]{SchritteCode/code2.py}
+
+Es gelten dieselben Regeln der Arithmetik wie üblich, also Multiplikation und Division gehen vor Addition und Subtraktion. Bei gleicher Priorität wird eine Zeile von links nach rechts interpretiert, sodass \texttt{3*2//4} das Ergebnis \texttt{1} hat. Um sicher zu gehen, dass die richtige Reihenfolge eingehalten wird, können Klammern \texttt{(...)} gesetzt werden. 
+
+Um gängige Funktionen auszuwerten, muss in Python ein Paket aufgerufen werden. Eine Grundfunktionalität ist im Modul \texttt{math} enthalten, siehe auch Buch Kapitel 2.2.2 \textit{Using the Python Shell as a Calculator}, wo weitere Funktionen gelistet sind. 
+
+\lstinputlisting[language=Python, caption=Weitere Rechenarten am Beispiel des Logarithmus]{SchritteCode/code3.py}
+
+\noindent
+\subsubsection{Für bereits Fortgeschrittene: Einheitenkonversion und Dimensionsanalyse} 
+
+\href{https://python.plainenglish.io/unit-conversion-in-python-3ee480d4b19c}{https://python.plainenglish.io/unit-conversion-in-python}
+
+\section{Grundoperationen mit Strings}
+
+Neben Zahlen gibt es in Python viele andere Datentypen, so auch Strings, die eine Abfolge von ``Buchstaben'' darstellen. 
+
+\lstinputlisting[language=Python, caption=Elementare Operationen mit Strings]{SchritteCode/code5.py}
+
+Im obigen Listing bewirkt \texttt{\textbackslash t} einen Tabulator und \texttt{\textbackslash n} einen Zeilenumbruch.
+\texttt{zfill} füllt eine Zahl (Integer?) mit Nullen auf.
+
+\section{Editoren}
+
+Auch wichtig: Verwendung von Text Editoren, mit denen ascii Dateien bearbeitet werden können. 
+%
+Anaconda wird mit einem Integrated Development Environment (IDE) namens Spyder ausgeliefert.
+Dieses k\"onnen Sie gerne im Rahmen dieser Veranstaltung verwenden.
+

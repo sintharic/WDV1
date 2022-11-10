@@ -1,0 +1,101 @@
+\documentclass[12pt, a4paper]{scrreprt}
+
+\usepackage[a4paper,left=20mm,right=20mm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\usepackage[ngerman]{babel}
+\usepackage{ngerman}
+\usepackage{german,amsfonts}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{cancel}
+
+\usepackage{graphicx,psfrag}
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\urlstyle{same}
+
+\usepackage{cancel}
+\usepackage{framed}
+
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codestr}{rgb}{0.5,0.5,0.1}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{PyCode}{
+    language=Python,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{cyan},
+    numberstyle=\tiny\color{codepurple},
+    stringstyle=\color{codegray},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    %emph={>,<,.,;,+,-,*,/,=,!=,==,+=,-=,/=,*=,~,import,as,with,in,for,while,if,elif,else,return,break,continue,try,catch,except,raise},
+    %emphstyle={\color{red}}
+}
+
+\lstset{style=PyCode}
+
+% added packeges
+\usepackage{tcolorbox}
+\usepackage{float}
+%-------
+
+% added counters
+\newcounter{Aufgabe}[chapter]
+%-------
+
+\def\labelitemi{--}
+
+% added colorboxes/environments
+\newtcolorbox[auto counter,number within=section]{exercise}[2][]{ colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries, title=Aufgabe~\thechapter.\theAufgabe \refstepcounter{Aufgabe}: #2,#1}
+%----
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+
+\begin{document}
+\begin{titlepage}
+\title{\begin{large}Skript zu\end{large}         \\
+        Wissenschaftliche Datenverarbeitung 1 }
+\author{Christian Müller und Martin H. Müser}
+\maketitle
+\end{titlepage}
+
+
+
+\setcounter{chapter}{-1}
+\tableofcontents
+\include{einleitung}
+\include{schritte}
+\include{arrays}
+\include{elementDV}
+\include{plots}
+\include{io}
+\include{control}
+\include{miscel}
+\include{symbolic}
+
+
+\end{document}
