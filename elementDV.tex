@@ -43,7 +43,7 @@ Als Beispiel nehmen wir die Funktion $f(x) = \sqrt{x}\sin(x)$ auf dem Intervall 
 %
 
 
-\lstinputlisting[language=Python, label=lst:trapezoid, caption=Traditionelle Integration gemäß der Trapezregel]{ElementarCode/code1.py}
+\lstinputlisting[language=Python, label=lst:trapz_loop, caption=Traditionelle Integration gemäß der Trapezregel]{ElementarCode/trapz_loop.py}
 % \begin{lstlisting}[language=Python, label=lst:trapezoid, caption=Traditionelle Integration gemäß der Trapezregel]
 % import numpy as np
 % 
@@ -72,6 +72,8 @@ Als Beispiel nehmen wir die Funktion $f(x) = \sqrt{x}\sin(x)$ auf dem Intervall 
 % \end{lstlisting}
 
 Als nächstes: numerische Stammfunktion mit numpy Paket.
+
+\lstinputlisting[language=Python, label=lst:trapz_numpy, caption=Traditionelle Integration gemäß der Trapezregel, firstline=13]{ElementarCode/trapz_np.py}
 
 Es ist Zeit zu gestehen, dass wir im ``echten Leben'' dieses konkrete  Beispiel, in dem die $x_n,f_n$ nicht als Messwerte vorliegen sondern als einfache Funktion, mit Hilfe von \texttt{wolframalpha} (wa) wiefolgt lösen würden:\vspace*{2mm}\\
 \texttt{wa> N[integrate sqrt(x)*sin(x) from x = 0 to 4*pi,10]} \vspace*{2mm}\\

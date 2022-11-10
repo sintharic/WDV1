@@ -2,7 +2,7 @@ import numpy as np
 
 xMin = 0
 xMax = 4*np.pi
-N = 100000
+N = 100
 
 def myFunction(x):
   # keine Klammern notwendig im return statement
@@ -24,4 +24,5 @@ for i in range(N):
   dF = dx*(f[i]+f[j])/2
   F.append(F[i]+dF)
   
+  # Sie sollten diesen Output in eine Datei schreiben.
   print(x[j], f[j], F[j])

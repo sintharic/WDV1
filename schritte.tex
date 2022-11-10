@@ -23,7 +23,7 @@ Kostenlos f\"ur jeden verfügbar (im Gegensatz zu Matlab)
 
 
 
-\section{Installation von Scientific Python}
+\section{Installation und Nutzung von Scientific Python}
 
 F\"ur diesen Kurs ben\"otigen Sie eine Scientific Python3-Umgebung. 
 Das bedeutet, dass neben der Basissprache Python3 eine Reihe an zus\"atzlichen Paketen (Modulen) installiert sein muss.
@@ -72,7 +72,7 @@ Da sich die Nummerierung der Kapitel u.U. mit der Zeit ändern können, wird auc
 
 Browser basierte, interaktive Entwicklungsumgebung, mit der Dokumente erstellt werden können, die sich wiederum zur Abgabe von Hausaufgaben verwenden lassen.
 
-\lstinputlisting[language=Python, label=lst:groesserAlsDu, caption=Ein kleines Python Programm statt ``hello world''.]{SchritteCode/code1.py}
+\lstinputlisting[language=Python, label=lst:groesserAlsDu, caption=Ein kleines Python Programm statt ``hello world''.]{SchritteCode/groesser.py}
 
 \noindent
 \textbf{In Vorlesung gezeigt:}
@@ -81,17 +81,20 @@ Browser basierte, interaktive Entwicklungsumgebung, mit der Dokumente erstellt w
 \item Einfügen von Abbildungen und Links in den Markup. 
 \item Wie speichert man  ein Jupyter Notebook und versendet es in Teams?
 \item[(--)] Wie werden PDFs erzeugt?
+
+
+
 \section{Grundrechenarten und mehr}
 \end{itemize}
 
 Einfache Arithmetik erfolgt gemäß, siehe auch Tutorium 3.1.1, \textit{Using Python as a Calculator}:
-\lstinputlisting[language=Python, caption=Grundrechenarten]{SchritteCode/code2.py}
+\lstinputlisting[language=Python, caption=Grundrechenarten]{SchritteCode/rechnen.py}
 
 Es gelten dieselben Regeln der Arithmetik wie üblich, also Multiplikation und Division gehen vor Addition und Subtraktion. Bei gleicher Priorität wird eine Zeile von links nach rechts interpretiert, sodass \texttt{3*2//4} das Ergebnis \texttt{1} hat. Um sicher zu gehen, dass die richtige Reihenfolge eingehalten wird, können Klammern \texttt{(...)} gesetzt werden. 
 
 Um gängige Funktionen auszuwerten, muss in Python ein Paket aufgerufen werden. Eine Grundfunktionalität ist im Modul \texttt{math} enthalten, siehe auch Buch Kapitel 2.2.2 \textit{Using the Python Shell as a Calculator}, wo weitere Funktionen gelistet sind. 
 
-\lstinputlisting[language=Python, caption=Weitere Rechenarten am Beispiel des Logarithmus]{SchritteCode/code3.py}
+\lstinputlisting[language=Python, caption=Weitere Rechenarten am Beispiel des Logarithmus]{SchritteCode/log.py}
 
 \noindent
 \subsubsection{Für bereits Fortgeschrittene: Einheitenkonversion und Dimensionsanalyse} 
@@ -102,15 +105,15 @@ Um gängige Funktionen auszuwerten, muss in Python ein Paket aufgerufen werden. 
 
 Neben Zahlen gibt es in Python viele andere Datentypen, so auch Strings, die eine Abfolge von ``Buchstaben'' darstellen. 
 
-\lstinputlisting[language=Python, caption=Elementare Operationen mit Strings]{SchritteCode/code5.py}
+\lstinputlisting[language=Python, caption=Elementare Operationen mit Strings]{SchritteCode/strings.py}
 
 Im obigen Listing bewirkt \texttt{\textbackslash t} einen Tabulator und \texttt{\textbackslash n} einen Zeilenumbruch.
 \texttt{zfill} füllt eine Zahl (Integer?) mit Nullen auf.
 
-\section{Editoren}
-
-Auch wichtig: Verwendung von Text Editoren, mit denen ascii Dateien bearbeitet werden können. 
-%
-Anaconda wird mit einem Integrated Development Environment (IDE) namens Spyder ausgeliefert.
-Dieses k\"onnen Sie gerne im Rahmen dieser Veranstaltung verwenden.
+% \section{Editoren}
+% 
+% Auch wichtig: Verwendung von Text Editoren, mit denen ascii Dateien bearbeitet werden können. 
+% %
+% Anaconda wird mit einem Integrated Development Environment (IDE) namens Spyder ausgeliefert.
+% Dieses k\"onnen Sie gerne im Rahmen dieser Veranstaltung verwenden.
 
